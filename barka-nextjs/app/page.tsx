@@ -12,8 +12,8 @@ export default function Home() {
         <span className="announcement-right">Livraison à définir selon votre zone</span>
       </div>
       <header className="header">
-        <a className="brand" href="/" aria-label="RACINE D’OR accueil">
-          <img src="/logo-racinedor.svg" alt="RACINE D’OR" style={{ height: 56, width: 190, objectFit: "contain" }} />
+        <a className="brand" href="/" aria-label="RACINES D’OR GROUP accueil">
+          <img src="/logo-racinedor.svg" alt="RACINES D’OR GROUP" style={{ height: 56, width: 190, objectFit: "contain" }} />
         </a>
         <nav className={`nav ${mobileMenu ? "nav-open" : ""}`}>
           <a href="/" onClick={() => setMobileMenu(false)}>Accueil</a>
@@ -49,13 +49,13 @@ export default function Home() {
       <section className="trust-strip">
         <div><Leaf/><span><b>Sélection attentive</b><small>Des produits choisis avec soin</small></span></div>
         <div><ShieldCheck/><span><b>Informations claires</b><small>Des détails utiles et transparents</small></span></div>
-        <div><Truck/><span><b>Commande simple</b><small>Contact direct avec RACINE D’OR</small></span></div>
+        <div><Truck/><span><b>Commande simple</b><small>Contact direct avec RACINES D’OR GROUP</small></span></div>
         <div><Heart/><span><b>Proche de vous</b><small>Un service à votre écoute</small></span></div>
       </section>
 
       <section className="story-section" id="approche">
-        <div className="story-image"><div className="story-image-inner"/><div className="story-vertical">RACINE D’OR · DEPUIS LE DÉBUT</div></div>
-        <div className="story-copy"><div className="eyebrow"><span className="eyebrow-line"/> NOTRE APPROCHE</div><h2>Le quotidien mérite<br/><em>le meilleur.</em></h2><p>Chez RACINE D’OR, nous croyons que les bons produits ont leur place dans les petits rituels de chaque jour. Notre ambition : proposer une sélection alimentaire claire, pratique et agréable à découvrir.</p><p>Nous avançons avec vous, produit après produit, en privilégiant la transparence sur les informations essentielles.</p><a className="text-link" href="/about">En savoir plus <ArrowRight size={15}/></a></div>
+        <div className="story-image"><div className="story-image-inner"/><div className="story-vertical">RACINES D’OR GROUP · DEPUIS LE DÉBUT</div></div>
+        <div className="story-copy"><div className="eyebrow"><span className="eyebrow-line"/> NOTRE APPROCHE</div><h2>Le quotidien mérite<br/><em>le meilleur.</em></h2><p>Chez RACINES D’OR GROUP, nous croyons que les bons produits ont leur place dans les petits rituels de chaque jour. Notre ambition : proposer une sélection alimentaire claire, pratique et agréable à découvrir.</p><p>Nous avançons avec vous, produit après produit, en privilégiant la transparence sur les informations essentielles.</p><a className="text-link" href="/about">En savoir plus <ArrowRight size={15}/></a></div>
       </section>
 
       <section className="newsletter" id="contact">
@@ -64,7 +64,7 @@ export default function Home() {
       </section>
 
       <footer className="footer">
-        <a className="brand brand-footer" href="/"><img src="/logo-racinedor.svg" alt="RACINE D’OR" style={{ height: 56, width: 190, objectFit: "contain" }} /></a>
+        <a className="brand brand-footer" href="/"><img src="/logo-racinedor.svg" alt="RACINES D’OR GROUP" style={{ height: 56, width: 190, objectFit: "contain" }} /></a>
         <p>Des essentiels alimentaires, choisis avec attention.</p>
         <div className="footer-bottom"><span>© {new Date().getFullYear()} RACINES D’OR GROUP. Tous droits réservés.</span><span>Conçu avec soin.</span></div>
       </footer>
