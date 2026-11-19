@@ -1,11 +1,3 @@
-export default function ContactPage() {
-  return (
-    <main style={{ minHeight: "100vh", background: "#fbfaf6", color: "#20251e", fontFamily: "sans-serif", padding: "8% 7%" }}>
-      <a href="/" style={{ color: "#455b42", textDecoration: "none" }}>← Retour à l’accueil RACINE D’OR</a>
-      <p style={{ letterSpacing: ".18em", color: "#455b42", marginTop: 50 }}>RESTONS EN CONTACT</p>
-      <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(38px, 6vw, 68px)", fontWeight: 400, lineHeight: 1.1 }}>Une question ?<br/><i style={{ color: "#455b42" }}>Parlons-en.</i></h1>
-      <p style={{ maxWidth: 620, lineHeight: 1.9, color: "#74796f" }}>Besoin d’une information sur un produit ou une commande ? Contactez RACINE D’OR. Nous vous répondrons dès que possible.</p>
-      <a href="mailto:contact@racinedor.bj" style={{ display: "inline-block", marginTop: 25, padding: "14px 18px", background: "#293b2c", color: "#fff", textDecoration: "none" }}>Écrire à RACINE D’OR</a>
-    </main>
-  );
-}
+const nav = [{label:"Accueil",href:"/"},{label:"Boutique",href:"/boutique"},{label:"À propos",href:"/about"},{label:"Contact",href:"/contact"}];
+function Header(){return <><div style={{background:"#293b2c",color:"#fff",padding:"10px 6%",fontSize:12}}>RACINE D’OR · Le bon goût, naturellement</div><header style={{padding:"20px 6%",display:"flex",justifyContent:"space-between",alignItems:"center",gap:20,flexWrap:"wrap",borderBottom:"1px solid #e6e4da"}}><a href="/"><img src="/logo-racinedor.svg" alt="RACINE D’OR" style={{height:52,width:160,objectFit:"contain"}}/></a><nav style={{display:"flex",gap:18,flexWrap:"wrap",fontSize:13}}>{nav.map(n=><a key={n.href} href={n.href} style={{color:n.href==="/contact"?"#455b42":"inherit",fontWeight:n.href==="/contact"?700:400}}>{n.label}</a>)}</nav></header></>}
+export default function ContactPage(){return <main style={{minHeight:"100vh",background:"#fbfaf6",color:"#20251e",fontFamily:"sans-serif"}}><Header/><section style={{padding:"70px 7% 100px",maxWidth:1100,margin:"auto"}}><p style={{letterSpacing:".18em",color:"#455b42",marginTop:20}}>RESTONS EN CONTACT</p><h1 style={{fontFamily:"Georgia,serif",fontSize:"clamp(38px,6vw,68px)",fontWeight:400,lineHeight:1.1}}>Une question ?<br/><i style={{color:"#455b42"}}>Parlons-en.</i></h1><p style={{maxWidth:620,lineHeight:1.9,color:"#74796f"}}>Besoin d’une information sur un produit ou une commande ? Contactez RACINE D’OR. Nous vous répondrons dès que possible.</p><a href="mailto:contact@racinedor.bj" style={{display:"inline-block",marginTop:25,padding:"14px 18px",background:"#293b2c",color:"#fff",textDecoration:"none"}}>Écrire à RACINE D’OR</a></section><footer style={{padding:"28px 7%",borderTop:"1px solid #e6e4da",fontSize:12,color:"#777"}}>© {new Date().getFullYear()} RACINE D’OR · <a href="/boutique">Boutique</a></footer></main>}
