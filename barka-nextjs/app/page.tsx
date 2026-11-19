@@ -98,10 +98,10 @@ export default function Home() {
           <span className="brand-word">BARKA<small>LE BON GOÛT, NATURELLEMENT</small></span>
         </a>
         <nav className={`nav ${mobileMenu ? "nav-open" : ""}`}>
-          <a href="#accueil" onClick={() => setMobileMenu(false)}>Accueil</a>
-          <a href="#boutique" onClick={() => setMobileMenu(false)}>La boutique</a>
-          <a href="#histoire" onClick={() => setMobileMenu(false)}>Notre approche</a>
-          <a href="#contact" onClick={() => setMobileMenu(false)}>Contact</a>
+          <a href="/" onClick={() => setMobileMenu(false)}>Accueil</a>
+          <a href="/boutique" onClick={() => setMobileMenu(false)}>La boutique</a>
+          <a href="/about" onClick={() => setMobileMenu(false)}>Notre approche</a>
+          <a href="/contact" onClick={() => setMobileMenu(false)}>Contact</a>
         </nav>
         <div className="header-actions">
           <button className="icon-btn search-trigger" aria-label="Aller à la recherche" onClick={() => document.getElementById("search")?.focus()}><Search size={19}/></button>
@@ -118,8 +118,8 @@ export default function Home() {
           <h1>Le bon goût<br/><em>commence</em> ici.</h1>
           <p className="hero-text">Des farines et céréales choisies avec attention pour accompagner les bons moments de votre quotidien.</p>
           <div className="hero-buttons">
-            <a className="button button-dark" href="#boutique">Découvrir la boutique <ArrowUpRight size={17}/></a>
-            <a className="text-link" href="#histoire">En savoir plus <ArrowRight size={15}/></a>
+            <a className="button button-dark" href="/boutique">Découvrir la boutique <ArrowUpRight size={17}/></a>
+            <a className="text-link" href="/about">En savoir plus <ArrowRight size={15}/></a>
           </div>
           <div className="hero-note"><span className="note-icon"><Leaf size={17}/></span><span><b>Des essentiels bien choisis</b><small>Une sélection simple, pour tous les jours.</small></span></div>
         </div>
