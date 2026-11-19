@@ -1,11 +1,23 @@
-export default function BoutiquePage() {
-  return (
-    <main style={{ minHeight: "100vh", background: "#fbfaf6", color: "#20251e", fontFamily: "sans-serif", padding: "8% 7%" }}>
-      <a href="/" style={{ color: "#455b42", textDecoration: "none" }}>← Retour à l’accueil BARKA</a>
-      <p style={{ letterSpacing: ".18em", color: "#455b42", marginTop: 50 }}>LA SÉLECTION BARKA</p>
-      <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(38px, 6vw, 68px)", fontWeight: 400, lineHeight: 1.1 }}>La boutique<br/><i style={{ color: "#455b42" }}>BARKA.</i></h1>
-      <p style={{ maxWidth: 620, lineHeight: 1.9, color: "#74796f" }}>Retrouvez nos farines et céréales, sélectionnées avec attention. La boutique complète est en cours de réorganisation.</p>
-      <a href="/" style={{ display: "inline-block", marginTop: 25, padding: "14px 18px", background: "#293b2c", color: "#fff", textDecoration: "none" }}>Voir les produits disponibles sur l’accueil →</a>
-    </main>
-  );
-}
+"use client";
+import {useMemo,useState} from "react";
+type Product={id:number;name:string;category:string;description:string;price:number;weight:string;image:string};
+const products:Product[]=[
+{id:1,name:"Farine de cossettes d’igname",category:"Farines",description:"Une farine traditionnelle pour vos repas du quotidien.",price:2500,weight:"1 kg",image:"https://images.unsplash.com/photo-1627485937980-221c88ac04f9?auto=format&fit=crop&w=1000&q=85"},
+{id:2,name:"Farine pour enfants",category:"Nutrition",description:"Préparation céréalière. Vérifiez les ingrédients et allergènes avant utilisation.",price:3500,weight:"500 g",image:"https://images.unsplash.com/photo-1579722821273-0f6c7d44362f?auto=format&fit=crop&w=1000&q=85"},
+{id:3,name:"Flocons d’avoine",category:"Céréales",description:"Pour petits-déjeuners, porridges et recettes maison.",price:2000,weight:"500 g",image:"https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=1000&q=85"}];
+const price=(n:number)=>n.toLocaleString("fr-FR")+" FCFA";
+export default function BoutiquePage(){
+const [category,setCategory]=useState("Tout"),[search,setSearch]=useState(""),[cart,setCart]=useState<Record<number,number>>({});
+const cats=["Tout","Farines","Nutrition","Céréales"];
+const filtered=useMemo(()=>products.filter(p=>(category==="Tout"||p.category===category)&&p.name.toLowerCase().includes(search.toLowerCase())),[category,search]);
+const count=Object.values(cart).reduce((a,b)=>a+b,0),total=products.reduce((a,p)=>a+p.price*(cart[p.id]||0),0);
+const add=(id:number)=>setCart(old=>({...old,[id]:(old[id]||0)+1}));
+const change=(id:number,d:number)=>setCart(old=>{const next={...old,[id]:Math.max(0,(old[id]||0)+d)};if(!next[id])delete next[id];return next;});
+const order=()=>{const phone=process.env.NEXT_PUBLIC_WHATSAPP_NUMBER||"";if(!phone||phone.includes("X")){alert("Le numéro WhatsApp de BARKA doit être configuré.");return;}const lines=products.filter(p=>cart[p.id]).map(p=>p.name+" ("+p.weight+") x"+cart[p.id]+" — "+price(p.price*cart[p.id])).join("\n");const msg="Bonjour BARKA, je souhaite commander :\n"+lines+"\nTotal estimé : "+price(total)+"\nMerci de confirmer la disponibilité et la livraison.";window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(msg),"_blank","noopener,noreferrer");};
+return <main style={{background:"#fbfaf6",color:"#20251e",minHeight:"100vh",fontFamily:"sans-serif"}}><div style={{background:"#293b2c",color:"#fff",padding:"12px 6%",fontSize:12}}>BARKA · Le bon goût, naturellement</div>
+<header style={{padding:"24px 6%",borderBottom:"1px solid #e6e4da",display:"flex",justifyContent:"space-between",alignItems:"center",gap:15,flexWrap:"wrap"}}><a href="/" style={{fontFamily:"Georgia,serif",fontSize:28,color:"#455b42",textDecoration:"none"}}>BARKA</a><nav style={{display:"flex",gap:18,fontSize:13,flexWrap:"wrap"}}><a href="/">Accueil</a><a href="/boutique" style={{color:"#455b42",fontWeight:700}}>Boutique</a><a href="/about">À propos</a><a href="/contact">Contact</a></nav><div>Panier : <b>{count}</b></div></header>
+<section style={{padding:"60px 6% 25px"}}><p style={{letterSpacing:".16em",fontSize:11,color:"#455b42"}}>LA SÉLECTION BARKA</p><h1 style={{fontFamily:"Georgia,serif",fontSize:"clamp(38px,6vw,64px)",fontWeight:400,margin:"12px 0"}}>La boutique <i style={{color:"#455b42"}}>BARKA.</i></h1><p style={{color:"#74796f",lineHeight:1.8,maxWidth:600}}>Découvrez notre sélection de farines et céréales, choisies avec attention pour accompagner votre quotidien.</p></section>
+<section style={{padding:"20px 6% 70px"}}><div style={{display:"flex",gap:10,flexWrap:"wrap",justifyContent:"space-between",marginBottom:25}}><div style={{display:"flex",gap:7,flexWrap:"wrap"}}>{cats.map(c=><button key={c} onClick={()=>setCategory(c)} style={{padding:"10px 14px",border:"1px solid #ddd",background:category===c?"#293b2c":"transparent",color:category===c?"white":"#555",cursor:"pointer"}}>{c}</button>)}</div><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Rechercher un produit..." style={{padding:12,border:"1px solid #ddd",background:"transparent",minWidth:220}}/></div>
+<div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))",gap:22}}>{filtered.map(p=><article key={p.id} style={{border:"1px solid #e6e4da",padding:12}}><img src={p.image} alt={p.name} style={{width:"100%",height:240,objectFit:"cover"}}/><p style={{fontSize:11,color:"#81877c"}}>{p.category} · {p.weight}</p><h3 style={{fontFamily:"Georgia,serif",fontWeight:400}}>{p.name}</h3><p style={{fontSize:13,color:"#74796f",lineHeight:1.7}}>{p.description}</p><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid #e6e4da",paddingTop:12}}><b>{price(p.price)}</b><button onClick={()=>add(p.id)} style={{background:"#293b2c",color:"#fff",border:0,padding:"10px 14px",cursor:"pointer"}}>Ajouter +</button></div>{cart[p.id]>0&&<div style={{display:"flex",gap:12,alignItems:"center",marginTop:12}}><button onClick={()=>change(p.id,-1)}>−</button><span>{cart[p.id]}</span><button onClick={()=>change(p.id,1)}>+</button></div>}</article>)}</div>{filtered.length===0&&<p>Aucun produit ne correspond à votre recherche.</p>}</section>
+{count>0&&<aside style={{position:"sticky",bottom:0,background:"#293b2c",color:"#fff",padding:"18px 6%",display:"flex",justifyContent:"space-between",alignItems:"center",gap:15,flexWrap:"wrap"}}><span>{count} article(s) · Total estimé : <b>{price(total)}</b></span><button onClick={order} style={{background:"#f3f0e6",color:"#293b2c",border:0,padding:14,cursor:"pointer"}}>Commander via WhatsApp</button></aside>}
+<footer style={{padding:"28px 6%",borderTop:"1px solid #e6e4da",fontSize:12,color:"#777"}}>© {new Date().getFullYear()} BARKA · <a href="/contact">Contact</a></footer></main>}
