@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "RACINE D’OR — Le goût de la nature",
-  description: "Découvrez les farines et céréales RACINE D’OR : farine de cossettes d’igname, farine pour enfants et flocons d’avoine.",
+  title: "RACINES D’OR GROUP — Se relever. Grandir. Rayonner.",
+  description: "RACINES D’OR GROUP : une marque en croissance, engagée à proposer des essentiels choisis avec soin.",
   openGraph: {
-    title: "RACINE D’OR — Le goût de la nature",
-    description: "Des essentiels alimentaires sélectionnés avec soin.",
+    title: "RACINES D’OR GROUP — Se relever. Grandir. Rayonner.",
+    description: "Se relever. Grandir. Rayonner.",
     type: "website"
   }
 };
