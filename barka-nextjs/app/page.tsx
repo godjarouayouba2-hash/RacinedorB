@@ -9,7 +9,7 @@ export default function Home() {
     <main>
       <div className="announcement">
         <span><Leaf size={13} /> RACINES D’OR GROUP · Se relever. Grandir. Rayonner.</span>
-        <span className="announcement-right">Livraison à définir selon votre zone</span>
+        <span className="announcement-right">Commandes et renseignements sur WhatsApp</span>
       </div>
       <header className="header">
         <a className="brand" href="/" aria-label="RACINES D’OR GROUP accueil">
@@ -31,12 +31,12 @@ export default function Home() {
         <div className="hero-copy">
           <div className="eyebrow"><span className="eyebrow-line"/> SIMPLICITÉ · QUALITÉ · CONFIANCE</div>
           <h1>Le bon goût<br/><em>commence</em> ici.</h1>
-          <p className="hero-text">Des farines et céréales choisies avec attention pour accompagner les bons moments de votre quotidien.</p>
+          <p className="hero-text">Une ambition qui grandit, une identité forte et des produits sélectionnés avec attention.</p>
           <div className="hero-buttons">
             <a className="button button-dark" href="/boutique">Découvrir la boutique <ArrowUpRight size={17}/></a>
             <a className="text-link" href="/about">Notre approche <ArrowRight size={15}/></a>
           </div>
-          <div className="hero-note"><span className="note-icon"><Leaf size={17}/></span><span><b>Des essentiels bien choisis</b><small>Une sélection simple, pour tous les jours.</small></span></div>
+          <div className="hero-note"><span className="note-icon"><Leaf size={17}/></span><span><b>Une identité tournée vers l’avenir</b><small>Se relever. Grandir. Rayonner.</small></span></div>
         </div>
         <div className="hero-visual">
           <div className="hero-photo"/>
