@@ -77,7 +77,7 @@ export default function Home() {
   }
   function checkout() {
     const lines = products.filter(p => cart[p.id]).map(p => `• ${p.name} (${p.weight}) x${cart[p.id]} : ${formatPrice(p.price * cart[p.id])}`).join("%0A");
-    const phone = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "";
+    const phone = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "2290148155345";
     const message = `Bonjour RACINE D’OR, je souhaite commander :%0A${lines}%0A%0ATotal estimé : ${formatPrice(total)}%0A%0AMerci de me confirmer la disponibilité et les modalités de livraison.`;
     if (!phone || phone.includes("X")) {
       setNotice("Ajoutez votre numéro WhatsApp dans .env.local pour activer les commandes.");
