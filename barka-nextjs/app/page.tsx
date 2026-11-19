@@ -94,8 +94,7 @@ export default function Home() {
       </div>
       <header className="header">
         <a className="brand" href="#" aria-label="RACINE D’OR accueil">
-          <span className="brand-mark">b<span>.</span></span>
-          <span className="brand-word">RACINE D’OR<small>LE BON GOÛT, NATURELLEMENT</small></span>
+          <img src="/logo-racinedor.svg" alt="RACINE D’OR" style={{ height: 52, width: 160, objectFit: "contain" }} />
         </a>
         <nav className={`nav ${mobileMenu ? "nav-open" : ""}`}>
           <a href="/" onClick={() => setMobileMenu(false)}>Accueil</a>
@@ -175,7 +174,7 @@ export default function Home() {
       </section>
 
       <footer className="footer">
-        <a className="brand brand-footer" href="#"><span className="brand-mark">b<span>.</span></span><span className="brand-word">RACINE D’OR<small>LE BON GOÛT, NATURELLEMENT</small></span></a>
+        <a className="brand brand-footer" href="#"><img src="/logo-racinedor.svg" alt="RACINE D’OR" style={{ height: 52, width: 160, objectFit: "contain" }} /></a>
         <p>Des essentiels alimentaires, choisis avec attention.</p>
         <div className="footer-bottom"><span>© {new Date().getFullYear()} RACINE D’OR. Tous droits réservés.</span><span>Conçu avec soin.</span></div>
       </footer>
