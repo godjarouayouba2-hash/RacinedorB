@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 140">
+<g fill="none" stroke="#C99A2E" stroke-width="4" stroke-linecap="round"><path d="M48 68 Q80 6 154 20"/><path d="M366 68 Q340 6 266 20"/><path d="M78 116 Q210 137 342 116"/></g>
+<g fill="#176B35"><path d="M210 68 C198 34 164 13 145 14 C151 43 177 61 210 68Z"/><path d="M210 68 C223 31 252 9 275 14 C266 45 240 62 210 68Z"/><path d="M210 68 C180 56 130 48 110 63 C143 79 179 79 210 68Z"/><path d="M210 68 C240 56 292 48 312 63 C278 79 242 79 210 68Z"/></g>
+<path d="M210 68 C192 79 186 94 210 112 C234 94 228 79 210 68Z" fill="#C99A2E"/>
+<text x="210" y="108" text-anchor="middle" font-family="Georgia,serif" font-size="30" letter-spacing="1.2" fill="#174B2C">RACINE <tspan fill="#C99A2E">D’OR</tspan></text>
+</svg>
