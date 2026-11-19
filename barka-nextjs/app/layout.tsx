@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "BARKA — Le bon goût, naturellement",
-  description: "Découvrez les farines et céréales BARKA : farine de cossettes d’igname, farine pour enfants et flocons d’avoine.",
+  title: "RACINE D’OR — Le goût de la nature",
+  description: "Découvrez les farines et céréales RACINE D’OR : farine de cossettes d’igname, farine pour enfants et flocons d’avoine.",
   openGraph: {
-    title: "BARKA — Le bon goût, naturellement",
+    title: "RACINE D’OR — Le goût de la nature",
     description: "Des essentiels alimentaires sélectionnés avec soin.",
     type: "website"
   }
