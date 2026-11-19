@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main>
       <div className="announcement">
-        <span><Leaf size={13} /> Les essentiels du quotidien, sélectionnés avec soin</span>
+        <span><Leaf size={13} /> RACINES D’OR GROUP · Se relever. Grandir. Rayonner.</span>
         <span className="announcement-right">Livraison à définir selon votre zone</span>
       </div>
       <header className="header">
@@ -41,7 +41,7 @@ export default function Home() {
         <div className="hero-visual">
           <div className="hero-photo"/>
           <div className="hero-stamp"><span>LE GOÛT<br/>DU BON</span><Leaf size={22}/></div>
-          <div className="hero-caption"><span>01 / 01</span><i/> RACINE D’OR — NOS ESSENTIELS</div>
+          <div className="hero-caption"><span>01 / 01</span><i/> RACINES D’OR GROUP</div>
         </div>
         <div className="hero-side-label">BONS PRODUITS · BONS MOMENTS</div>
       </section>
@@ -66,7 +66,7 @@ export default function Home() {
       <footer className="footer">
         <a className="brand brand-footer" href="/"><img src="/logo-racinedor.svg" alt="RACINE D’OR" style={{ height: 56, width: 190, objectFit: "contain" }} /></a>
         <p>Des essentiels alimentaires, choisis avec attention.</p>
-        <div className="footer-bottom"><span>© {new Date().getFullYear()} RACINE D’OR. Tous droits réservés.</span><span>Conçu avec soin.</span></div>
+        <div className="footer-bottom"><span>© {new Date().getFullYear()} RACINES D’OR GROUP. Tous droits réservés.</span><span>Conçu avec soin.</span></div>
       </footer>
     </main>
   );
