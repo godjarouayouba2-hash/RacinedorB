@@ -19,7 +19,10 @@ export default function BoutiquePage(){
 const [category,setCategory]=useState("Tout"),[search,setSearch]=useState(""),[cart,setCart]=useState<Record<number,number>>({}),[deliveryAddress,setDeliveryAddress]=useState(""),[deliveryDetails,setDeliveryDetails]=useState(""),[coordinates,setCoordinates]=useState<Coordinates|null>(null),[deliveryZone,setDeliveryZone]=useState("" );
 const cats=["Tout","Farines","Nutrition","Céréales"];
 const filtered=useMemo(()=>products.filter(p=>(category==="Tout"||p.category===category)&&(p.name.toLowerCase().includes(search.toLowerCase())||p.description.toLowerCase().includes(search.toLowerCase()))),[category,search]);
-const count=Object.values(cart).reduce((a,b)=>a+b,0),total=products.reduce((a,p)=>a+p.price*(cart[p.id]||0),0);\nconst deliveryFees:Record<string,number>={calavi_proche:500,calavi_eloigne:1000,cotonou_autres:1500};\nconst deliveryFee=deliveryZone?deliveryFees[deliveryZone]:0;\nconst grandTotal=total+deliveryFee;
+const count=Object.values(cart).reduce((a,b)=>a+b,0),total=products.reduce((a,p)=>a+p.price*(cart[p.id]||0),0);
+const deliveryFees:Record<string,number>={calavi_proche:500,calavi_eloigne:1000,cotonou_autres:1500};
+const deliveryFee=deliveryZone?deliveryFees[deliveryZone]:0;
+const grandTotal=total+deliveryFee;
 const add=(id:number)=>setCart(old=>({...old,[id]:(old[id]||0)+1}));
 const change=(id:number,d:number)=>setCart(old=>{const next={...old,[id]:Math.max(0,(old[id]||0)+d)};if(!next[id])delete next[id];return next;});
 const pickCoordinates=(coords:Coordinates)=>setCoordinates(coords);
