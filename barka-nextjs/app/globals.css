@@ -21,3 +21,6 @@
 
 /* Interactive delivery location picker */
 .rd-delivery-map{height:300px;width:100%;border:1px solid #d7d9ce;background:#e7e9e1;z-index:0}.rd-map-label{font-size:11px;color:#e9eee7;margin-top:3px}.rd-map-coordinates{font-size:10px;color:#e9eee7;margin:0}.rd-map-coordinates button{border:0;background:transparent;color:#f4d38b;text-decoration:underline;padding:0 4px;cursor:pointer}
+
+/* Delivery fee selector */
+.rd-fee-selection{width:100%;display:grid;gap:7px;color:#f4f1e8}.rd-fee-selection label{display:flex;flex-direction:column;gap:6px;font-size:11px}.rd-fee-selection select{width:100%;max-width:480px;padding:11px;background:#fff;color:#263327;border:1px solid #9aa797;font-size:12px}.rd-fee-selection p{font-size:12px;margin:5px 0}.rd-fee-selection small{font-size:10px;color:#d5dbcF}
